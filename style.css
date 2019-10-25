@@ -1,0 +1,39 @@
+.row{
+    margin: 0 auto;
+    text-align: center;
+}
+/*specifically for sizing the text to fit in the box*/
+.form-group,textarea{
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 15px;
+    margin-left: 5px;
+    text-align: center;
+    color:grey;
+}
+.row1, .rowheader{
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    padding-top: 10px;
+}
+.row1, .row2{
+    padding-top: 0px;
+    margin: 10px;
+}
+h5{
+    width: 100%;
+    padding:10px;
+}
+body{
+    background: lightgray;    
+}
+.container{
+    background: #ffffff;
+    margin: 7%; 
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+}
+#psswheader{
+    width: 100%;
+    text-align: center;
+}
