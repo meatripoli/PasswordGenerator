@@ -8,6 +8,8 @@ var specialCharCheckbox = document.getElementById("scCheckbox");
 var numberCheckbox = document.getElementById("numCheckbox");
 var upperCheckbox = document.getElementById("ucCheckbox");
 var lowerCheckbox = document.getElementById("lcCheckbox");
+///disabling textarea from being edited
+document.getElementById("mytext").disabled = true;
 
 function generatePass(){
     ///stops the page from refreshing when button is pressed
@@ -59,10 +61,13 @@ function generatePass(){
 }
 ///selects and copies text in the textarea to clipboard
 function copyText(event){
+    //enabling textarea editiong for copy to clipboard
+    document.getElementById("mytext").disabled = false;
     event.preventDefault();
     passTextArea.select();
     var copiedText = document.execCommand("copy");
     console.log(copiedText);
+    document.getElementById("mytext").disabled = true;
 }
 ///added listener to the copy & generate password buttons
 copyButton.addEventListener("click",copyText);

@@ -9,7 +9,7 @@
     margin-right: 15px;
     margin-left: 5px;
     text-align: center;
-    color:grey;
+    color:rgb(63, 62, 62);
 }
 .row1, .rowheader{
     border-bottom-style: solid;
@@ -20,18 +20,16 @@
     padding-top: 0px;
     margin: 10px;
 }
-h5{
+h2{
     width: 100%;
     padding:10px;
-}
-body{
-    background: lightgray;    
+    color:rgb(63, 62, 62);
 }
 .container{
     background: #ffffff;
-    margin: 7%; 
-    border-bottom-style: solid;
-    border-bottom-color: lightgray;
+    margin: 7%;
+    border-style: solid;
+    border-color: lightblue;
 }
 #psswheader{
     width: 100%;
