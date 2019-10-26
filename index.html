@@ -17,26 +17,55 @@
             <div class="row rowheader">
                 <h5>Generate a random password </h5>  
             </div>
-            <form action="example/submit.html">
-                <div class="row row1">
+            <div class="row row1">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                            <span id="passlenghttxt">
+                                Current Length of Password: 
+                                <span id="passlenghtnum">8</span>
+                            </span>
+                        <input type="range" class="form-control-range" id="formControlRange" 
+                        min="8" max="132" step="1" value="8">   
+                        
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Upper Case Letters</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Lower Case Letters</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Special Characters</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Numbers</label>
+                    </div>
+
+                </div>
+                <div class="col-sm-8">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"></label>
                         <textarea id="mytext" placeholder="Your secure password" rows="5"></textarea>
                     </div>
+                </div>  
+            </div>
+            <div class="row row2">
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-info" id="passButton">
+                        Generate Password
+                    </button>
                 </div>
-                <div class="row row2">
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-info" id="passButton">
-                            Generate Password
-                        </button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-light" id="copyButton">
-                            Copy to Clipboard
-                        </button>
-                    </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-light" id="copyButton">
+                        Copy to Clipboard
+                    </button>
                 </div>
-            </form>
+            </div>
+            
         </div>
         <script type="text/javascript" src="./script.js"></script>
     </body>

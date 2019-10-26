@@ -7,15 +7,20 @@
 - 48-57 number
 - 65-90 uppercase letters
 - 97-122 lowercase letters
-
 */
+
 var generatePassButton = document.querySelector("#passButton");
 var copyButton = document.querySelector("#copyButton");
 var passTextArea = document.querySelector("#mytext");
+var slider = document.querySelector("#formControlRange");
+var sliderValue = document.getElementById('formControlRange').value;
 
-function generatePass(event){
+function generatePass(){
     event.preventDefault();
-    var passlen = Math.round(Math.random()* (132 - 8) + 8) ;//random number between 8 & 132
+    //random number between 8 & 132
+    //picked by the user
+    var passlen = document.getElementById('formControlRange').value;
+    //Math.round(Math.random()* (132 - 8) + 8); 
     var randPassword = "";
     var specialCharCount = 0;
     var numberCount = 0;
@@ -54,3 +59,8 @@ function copyText(event){
 
 copyButton.addEventListener("click",copyText);
 generatePassButton.addEventListener("click",generatePass);
+
+////////for slider
+slider.addEventListener("change",function(){
+    document.getElementById("passlenghtnum").textContent = document.getElementById('formControlRange').value;
+});
