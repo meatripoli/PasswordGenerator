@@ -3,6 +3,7 @@
 This homework was to build a portfolio website using bootstrap 
 Currently deployed webiste:
 [Password Generator](https://meatripoli.github.io/PasswordGenerator/ "Password Generator")
+![Screenshot](screenshot.png?raw=true "Screenshot")
 
 ## Getting Started
 + Clone the repo to get started
