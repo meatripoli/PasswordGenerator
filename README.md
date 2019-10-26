@@ -1,11 +1,13 @@
 
-# Maria's Portfolio
+# Password Generator
 This homework was to build a portfolio website using bootstrap 
 Currently deployed webiste:
+[Password Generator](https://meatripoli.github.io/PasswordGenerator/ "Password Generator")
 
 ## Getting Started
-Clone the repo to get started
-Recommend using Visual Studio Code or similar to edit code.
++ Clone the repo to get started
++ Recommend using Visual Studio Code or similar to edit code.
++ Open index.html in a browser.
 
 ### Prerequisites
 None
