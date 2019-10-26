@@ -15,16 +15,16 @@
                 <h2>Generate a random password </h2>  
             </div>
             <div class="row row1">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                            <span id="passlenghttxt">
-                                Current Length of Password: 
-                                <span id="passlenghtnum">8</span>
-                            </span>
+                <div class="col-sm-4" id="colLeft">
+                    <div class="form-group" id="slider">
+                        <span id="passlenghttxt">
+                            Current Length of Password: 
+                            <span id="passlenghtnum">8</span>
+                        </span>
                         <input type="range" class="form-control-range" id="formControlRange" 
                         min="8" max="132" step="1" value="8">   
-                        
                     </div>
+                    
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="ucCheckbox">
                         <label class="form-check-label" for="lcChar">Upper Case Letter</label>
@@ -41,9 +41,8 @@
                         <input type="checkbox" class="form-check-input" id="numCheckbox">
                         <label class="form-check-label" for="num">Numerical Character</label>
                     </div>
-
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-8" id="colRight">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"></label>
                         <textarea id="mytext" placeholder="Your secure password" rows="5"></textarea>
