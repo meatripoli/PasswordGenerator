@@ -1,66 +1,74 @@
-/*
-- create a var that picks a random length of the pass between 1 & 125
-- then add 7 so its between 8 & 132
-- loop of Math.random().toString(36).substring(2,3) until the 
-    length of the pass = length of random number
-- 33-47 58-64 91-96 123-126 special character
-- 48-57 number
-- 65-90 uppercase letters
-- 97-122 lowercase letters
-*/
-
+///global variables
 var generatePassButton = document.querySelector("#passButton");
 var copyButton = document.querySelector("#copyButton");
 var passTextArea = document.querySelector("#mytext");
 var slider = document.querySelector("#formControlRange");
 var sliderValue = document.getElementById('formControlRange').value;
+var specialCharCheckbox = document.getElementById("scCheckbox");
+var numberCheckbox = document.getElementById("numCheckbox");
+var upperCheckbox = document.getElementById("ucCheckbox");
+var lowerCheckbox = document.getElementById("lcCheckbox");
 
 function generatePass(){
+    ///stops the page from refreshing when button is pressed
     event.preventDefault();
     //random number between 8 & 132
     //picked by the user
     var passlen = document.getElementById('formControlRange').value;
     //Math.round(Math.random()* (132 - 8) + 8); 
     var randPassword = "";
-    var specialCharCount = 0;
-    var numberCount = 0;
-    var upperCount = 0;
-    var lowerCount = 0;
-    for (var i=0; i<passlen; i++){
-        var passChar = Math.round(Math.random()* (126 - 33) + 33);
-        randPassword = randPassword + String.fromCharCode(passChar);
-        if(passChar>=48 && passChar<=57){
-            numberCount++;
+    var count = 0;
+    var passChar;
+    while(count<passlen){
+        ///check if any checkbox is selected
+        if(specialCharCheckbox.checked === false && numberCheckbox.checked === false && upperCheckbox.checked === false && lowerCheckbox.checked === false){
+            alert("Please select at lease one criteria for the password from the list below");
+            break;
         }
-        else if(passChar>=65 && passChar<=90){
-            upperCount++;
+        ///check if password lenght was reached
+        if(count>=passlen){break;}
+        ///if Special Char selected
+        else if(scCheckbox.checked) {
+            count++;
+            ///pick number between 47 & 33
+            passChar = Math.round(Math.random()* (47 - 33) + 33);
+            ///convert to Ascii and concat to string
+            randPassword = randPassword + String.fromCharCode(passChar);
         }
-        else if(passChar>=97 && passChar<=122){
-            lowerCount++;
+        if(count>=passlen){break;}
+        else if(numberCheckbox.checked) {
+            count++;
+            passChar = Math.round(Math.random()* 9);
+            randPassword = randPassword + passChar.toString();
         }
-        else if((passChar>=33 && passChar<=47)||(passChar>=58 && passChar<=64)
-        ||(passChar>=91 && passChar<=96)||(passChar>=123 && passChar<=126)){
-            specialCharCount++;
+        if(count>=passlen){break;}
+        else if(ucCheckbox.checked){
+            count++;
+            passChar = Math.round(Math.random()* (90 - 65) + 65);
+            randPassword = randPassword + String.fromCharCode(passChar);
         }
+        if(count>=passlen){break;}
+        else if(lcCheckbox.checked){
+            count++;
+            passChar = Math.round(Math.random()* (122 - 97) + 97);
+            randPassword = randPassword + String.fromCharCode(passChar);
+        }   
     }
-    passTextArea.textContent = randPassword;
-    console.log( "Numbers count: "+numberCount);
-    console.log( "Upper case letters count: "+upperCount);
-    console.log( "Lower case letters count: "+upperCount);
-    console.log( "Special character count: "+specialCharCount);
-    console.log( "Password length: "+randPassword.length);   
+    ///pass the final password to the text area in the webpage
+    passTextArea.textContent = randPassword; 
 }
+///selects and copies text in the textarea to clipboard
 function copyText(event){
     event.preventDefault();
     passTextArea.select();
     var copiedText = document.execCommand("copy");
     console.log(copiedText);
 }
-
+///added listener to the copy & generate password buttons
 copyButton.addEventListener("click",copyText);
 generatePassButton.addEventListener("click",generatePass);
 
-////////for slider
+////////displays the number the slider is on
 slider.addEventListener("change",function(){
     document.getElementById("passlenghtnum").textContent = document.getElementById('formControlRange').value;
 });
